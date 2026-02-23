@@ -1,29 +1,30 @@
-import React, {useEffect, useState}from "react";
+import React, {useEffect, useState} from "react";
 import api from "./services/api";
 
 export default function App() {
-    const[user, setUser]= useState(null);
+  const [user, setUser] = useState(null);
 
-    //carrega dados da API
-    useEffect(()=>{
-      async function loadUser() {
-        try{
-          const response =  await api.get('/user');
-          setUser(response.data);
-        } catch(console){
-          console.error('Error', error);
-        }  
-      }
-      loadUser();
-    },[]);
+  // Carrega dados da API
+  useEffect(() => {
+    async function loadUser() {
+      try {
+        const response = await api.get('/users/Givanildo35');
+        setUser(response.data);
+      } catch (error) {  // ✅ Corrigido
+        console.error('Error', error);
+      }  
+    }
+    loadUser();
+  }, []);
+
+  if (!user) return <div>Carregando...</div>;
+
+  return (
+    <div className="App">  {/* ✅ Corrigido */}
+      <p>Usuario: {user.login}</p>
+      <p>Biografia: {user.bio || 'Sem Biografia'}</p>
+    </div>
+  );
 }
-if(!user) return <div>Carregando...</div>;
 
-return(
-  <div className={App}>
-    <p>Usuario: {user.login}</p>
-    <p>Biografia: {user.bio || 'Sem Biografia'}</p>
-
-  </div>
-)
 
