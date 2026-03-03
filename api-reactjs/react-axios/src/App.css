@@ -32,4 +32,74 @@ body{
 .avatar{
   width: 150px;
   height: 150px;
+  border-radius: 50%;
+  border: 4px solid var(--accent); 
+}
+.user-info h1{
+  margin: 0 0 10px 0;
+}
+.user-info p{
+  color: var(--text--dim);
+  margin-bottom: 15px;
+}
+
+.status {
+  margin-bottom: 20px;
+}
+.status span {
+  margin-right: 20px;
+}
+
+.github-link {
+  display: inline-block;
+  background-color: var(--accent);
+  color: white;
+  text-decoration: none;
+  padding: 18px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/*repositorio Grid*/
+.repos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+.repo.card{
+background: var(--card-bg);
+padding: 20px;
+border-radius: 8px;
+transition: all 0.3s ease-in-out;
+
+transition: transform 0.4s cubic-bezier(0.165, 084,0.44, 1),
+            box-shadow 0.4s cubic-bezier(0.165, 084,0.44, 1),
+            border-color 0.3s ease;
+box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+.repo.card:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  border-color:chartreuse;
+}
+
+.repo.card h3 {
+  color: chocolate;
+  margin: 0;  
+}
+
+.repo-card p {
+  font-size: 0.85rem;
+  color: var(--text--dim);
+  height: 40px;
+  overflow: hidden; /*controla o que acontece quando o contudo de um elemeto é grande de mais para caber na area definida*/
+}
+
+.repo-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  font-size: 0.8rem;
 }
