@@ -34,7 +34,7 @@ export default function App() {
       }
       loadData();
 
-    }, []);
+    }, [username]);
 
     if(loading){
       return (
