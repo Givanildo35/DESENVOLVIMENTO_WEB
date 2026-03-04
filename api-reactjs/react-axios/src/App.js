@@ -80,14 +80,12 @@ export default function App() {
                   <h3>{repo.name}</h3>
                   <p>{repo.description || "Sem descrição"}</p>
                   <div className="repo-footer">
-                    <span> {repo.stargazers_count} </span>
-                    <span> {repo.forks_count} </span>
+                    <span> {repo.stargazers_count} stars </span>
+                    <span> {repo.forks_count} forks  </span>
                     <a href="{repo.html_url} target="_blank rel="noreferrer">
                       Acessar
                     </a>
-
-
-
+                    
                   </div>
                 </div>
               ))}
