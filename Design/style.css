@@ -1,8 +1,63 @@
+:root{
+    --roxo-700: hsl(257,40%,49%);
+    --magenta-400:hsl(300,69%,71%);
+    --branco:#fff;
+}
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: hsl(257,40%,49%);
+    background-color: hsl(257,40%,49%); 
+    background-image: url("assets/bg-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--branco);
+    font-family:"Open Sans", "sans-serif";
+    min-height: 100vh;
+    padding:40px 20px;
 }
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+ .container-direito {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 50px;
+        margin-top:40px;
+    }
+    
+    .container {
+        max-width: 1440px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        min-height: 80vh;
+        
+}
+    
+    h1 {
+    font-family:'Poppins',sans-serif;
+    font-weight: 600;
+    font-size: 1.6rem;
+    text-align: center;
+    color: var(--magenta-400);
+    line-height: 1.4;   
+}
+
+.btn{
+background-color: var(--branco);
+color: var(--roxo-700);
+font-family:'Poppins',sans-serif ;
+padding: 15px 60px;
+border-radius: 30px;
+border: none;
+cursor: pointer;
+
+}
+    
