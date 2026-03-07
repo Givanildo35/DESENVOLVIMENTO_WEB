@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"/>
+    <title>SPLITTER</title>
+</head>
+
+<body>   
+    <header>
+    <h1 class="logo">SPLI<br>TTER</h1>
+    </header>
+    <main class="container"></main>
+        <section class="calculator">
+
+            <div class="saldo">
+                
+                <label for="bill">Conta</label>
+                <input id="bill" type="number" placeholder="0">
+
+            </div>
+
+            <div class="porcentagem">
+
+                <label>Selecione a % de Gorgeta</label>
+
+                <div class="btn">
+
+                    <button data-tip="5">5%</button>
+                    <button data-tip="10">10%</button>
+                    <button data-tip="15">15%</button>
+                    <button data-tip="25">25%</button>
+                    <button data-tip="50">50%</button>
+
+                    <input id="customTip" type="number" placeholder="Custom">
+
+                </div>
+            </div>
+
+            <div class="pessoas">
+
+                <label for="people">Numero de Pessoas</label>
+                <input id="people" type="number" placeholder="0">
+                <p class="error" id="error">Não pode ser zero</p>
+
+            </div>
+
+    </section>
+
+    <section class="result">
+
+        <div class="result-line">
+
+            <div>
+                <p>Valor da Gorgeta</p>
+                <span>/ Pessoa</span>
+            </div>
+
+            <h2 id="tipAmount">R$0.00</h2>
+
+        </div>
+
+        <div class="result-line">
+
+            <div>
+                <p>Total</p>
+                <span>/ Pessoa</span>
+            </div>
+
+            <h2 id="totalAmount">R$0.00</h2>
+
+        </div>
+
+        <button id="reset">RESET</button>
+
+    </section>
+
+</main>
+    
+</body>
+</html>

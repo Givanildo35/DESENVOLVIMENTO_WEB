@@ -1,0 +1,33 @@
+:root{
+    --Verde400: hsl(172, 67%, 45%);
+    --Verde900: hsl(183, 100%, 15%);
+    
+    --Cinza500: hsl(186, 14%, 43%);
+    --Cinza400:hsl(184, 14%, 56%);
+    --Cinza200:hsl(185, 41%, 84%);
+    --Cinza50:hsl(189, 47%, 97%);
+    --Branco:hsl(0, 100%, 100%);
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Space Momo", momospace;
+    background: var(--Cinza200);
+    
+}
+.saldo{
+
+}
+.porcentagem{
+
+}
+
+.btn{
+
+}
+.result-line
