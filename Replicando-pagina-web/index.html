@@ -1,94 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Splitter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <header>
+      <h1 class="logo">SPLI<br />TTER</h1>
+    </header>
 
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Splitter</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<header>
-<h1 class="logo">SPLI<br>TTER</h1>
-</header>
-
-<main class="container">
-
-    <section class="calculator">
-
+    <main class="container">
+      <section class="calculator">
         <div class="form-group">
-            <label for="bill" class="icon">Conta</label>
-            <div class="input-wrapper">
-                <img src="assets/icon-dollar.svg" alt="" class="icon"/>
-                <input id="bill" type="number" placeholder="0">
-            </div>
+          <label for="bill" class="icon">Conta</label>
+          <div class="input-wrapper">
+            <img src="assets/icon-dollar.svg" alt="" class="icon" />
+            <input id="bill" type="number" placeholder="0" step="0.01" min="0" />
+          </div>
         </div>
 
-    <div class="form-group">
-
-        <label>Selecione a  %</label>
-
-        <div class="tip-buttons">
-
+        <div class="form-group">
+          <label>Selecione a %</label>
+          <div class="tip-buttons">
             <button data-tip="5">5%</button>
             <button data-tip="10">10%</button>
             <button data-tip="15">15%</button>
             <button data-tip="25">25%</button>
             <button data-tip="50">50%</button>
-
-            <input id="customTip" type="number" placeholder="Custom">
-
+            <input id="customTip" type="number" placeholder="Custom" />
+          </div>
         </div>
-    </div>
 
-    <div class="form-group">
+        <div class="form-group">
+          <label for="people">Numero de Pessoas</label>
+          <p class="error" id="error">Nao pode ser zero</p>
+        </div>
+        <div class="input-wrapper">
+            <img src="assets/icon-person.svg" alt="" class="icon" />
+            <input id="people" type="number" placeholder="0" min="0" />
+          </div>
+      </section>
 
-    <label for="people">Numero de Pessoas</label>
-    <input id="people" type="number" placeholder="0">
+      <section class="result">
+        <div class="result-line">
+          <div>
+            <p>Tip Amount</p>
+            <span>/ pessoa</span>
+          </div>
 
-    <p class="error" id="error">Nao pode ser zero</p>
+          <h2 id="tipAmount">R$0.00</h2>
+        </div>
 
-    </div>
+        <div class="result-line">
+          <div>
+            <p>Total</p>
+            <span>/ por pessoa</span>
+          </div>
 
-    </section>
+          <h2 id="totalAmount">R$0.00</h2>
+        </div>
 
-    <section class="result">
+        <button id="reset">RESET</button>
+      </section>
+    </main>
 
-    <div class="result-line">
-
-    <div>
-    <p>Tip Amount</p>
-    <span>/ pessoa</span>
-    </div>
-
-    <h2 id="tipAmount">R$0.00</h2>
-
-    </div>
-
-    <div class="result-line">
-
-    <div>
-    <p>Total</p>
-    <span>/ por pessoa</span>
-    </div>
-
-    <h2 id="totalAmount">R$0.00</h2>
-
-    </div>
-
-    <button id="reset">RESET</button>
-
-    </section>
-
-</main>
-
-<script src="script.js"></script>
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

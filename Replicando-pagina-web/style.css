@@ -1,12 +1,10 @@
 :root {
   --green400: hsl(172, 67%, 45%);
   --green900: hsl(183, 100%, 15%);
-
   --grey500: hsl(186, 14%, 43%);
   --grey400: hsl(184, 14%, 56%);
   --grey200: hsl(185, 41%, 84%);
   --grey50: hsl(189, 47%, 97%);
-
   --white: hsl(0, 100%, 100%);
 }
 
@@ -14,10 +12,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
 }
 
 body {
-  font-family: "Space Mono", monospace;
   background: var(--grey200);
   display: flex;
   flex-direction: column;
@@ -43,9 +42,17 @@ body {
   max-width: 900px;
 }
 .input-wrapper .icon{
-    padding:10x;
-    
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%)
+}
+.input-wrapper{
+  position:relative ;
+}
 
+.input-wrapper input{
+  padding-left:45px;
 }
 
 .calculator {
@@ -66,12 +73,13 @@ label {
 }
 
 input {
-    font-size: 24px;
-    padding: 10px;
-    border: none;
-    background: var(--grey50);
-    border-radius: 6px;
-    text-align: right;
+  font-size: 24px;
+  padding: 10px;
+  border: none;
+  background: var(--grey50);
+  border-radius: 6px;
+  text-align: right;
+  width: 100%;
 }
 
 .tip-buttons {
@@ -107,6 +115,12 @@ input {
   text-align: center;
 }
 
+#customTip{
+  font-size: 15px;
+  color: var(--grey500);
+
+}
+
 .result {
   background: var(--green900);
   color: white;
@@ -135,10 +149,14 @@ input {
   font-size: 32px;
 }
 
-#error {
-  color: red;
-  display: none;
-  font-size: 12px;
+.form-group label{
+  display:flex;
+  justify-content:space-between;
+}
+
+#error{
+  color:red;
+  font-size:12px;
 }
 
 #reset {
@@ -169,10 +187,8 @@ input {
         flex:1;
     }
 
-    .btn{
-
-        grid-template-columns:60px 60px 60px;
-
-    }
+  .tip-buttons{
+ grid-template-columns:repeat(3,1fr);
+}
 
 }
