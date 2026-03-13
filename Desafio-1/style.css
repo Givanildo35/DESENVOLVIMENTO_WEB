@@ -69,7 +69,10 @@ h1{
 
 .links a:hover{
     background:#352f16f1;
-  color:#dd6312;
+    color:#dd6312;
+    box-shadow: 10px 5px 5px  red;
+    
+    
 }
 
 @media (max-width:768px){
