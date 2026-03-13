@@ -1,0 +1,103 @@
+@font-face {
+    font-family: 'Inter ExtraBold',sans-serif; 
+    src: url('fonts/fonts/Inter-VariableFont_slnt,wght.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    
+}
+
+body{
+    background:#141414;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.card{
+    background:#aca28c;
+    padding:40px;
+    width:320px;
+    border-radius:15px;
+    text-align:center;
+    color:white;
+}
+
+.perfil{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:22px;
+    margin-bottom:5px;
+    color:#dd6312;
+}
+
+.local{
+    color:#dd6312;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.bio{
+    font-size:14px;
+    color:#ccc;
+    margin-bottom:25px;
+    color:#dd6312;
+}
+
+.links a{
+    display:block;
+    text-decoration:none;
+    background:#333;
+    color:rgb(54, 148, 31);
+    padding:12px;
+    margin:10px 0;
+    border-radius:8px;
+    transition:0.3s;
+    font-weight:bold;
+}
+
+.links a:hover{
+    background:#352f16f1;
+  color:#dd6312;
+}
+
+@media (max-width:768px){
+
+.card{
+padding:30px;
+}
+
+h1{
+font-size:20px;
+}
+
+.bio{
+font-size:13px;
+}
+
+}
+
+
+@media (max-width:480px){
+
+.card{
+padding:25px;
+max-width:300px;
+}
+
+.perfil{
+width:80px;
+height:80px;
+}
+}
