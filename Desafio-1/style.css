@@ -12,7 +12,7 @@
 }
 
 body{
-    background:#141414;
+    background:#96570fea;
     height:100vh;
     display:flex;
     justify-content:center;
@@ -20,12 +20,14 @@ body{
 }
 
 .card{
-    background:#aca28c;
+    background:#aca28cfb;
     padding:40px;
-    width:320px;
+    width:100%;
     border-radius:15px;
     text-align:center;
     color:white;
+    max-width: 350px;
+    
 }
 
 .perfil{
@@ -33,7 +35,7 @@ body{
     height:90px;
     border-radius:50%;
     object-fit:cover;
-    margin-bottom:20px;
+    margin-bottom:30px;
 }
 
 h1{
@@ -56,23 +58,69 @@ h1{
 }
 
 .links a{
-    display:block;
-    text-decoration:none;
-    background:#333;
-    color:rgb(54, 148, 31);
-    padding:12px;
-    margin:10px 0;
-    border-radius:8px;
-    transition:0.3s;
-    font-weight:bold;
+display:block;
+text-decoration:none;
+background:#333;
+color:#dd6312;
+padding:12px;
+margin:20px 10px 0 ;
+border-radius:10px;
+font-weight:bold;
+position:relative;
+overflow:hidden;
+transition:0.3s;
+
 }
 
 .links a:hover{
-    background:#352f16f1;
-    color:#dd6312;
-    box-shadow: 10px 5px 5px  red;
-    
-    
+color:#b68419ee;
+background:#111;
+animation:fire 1s infinite alternate;
+}
+
+
+@keyframes fire{
+
+0%{
+box-shadow:
+0 0 5px #ff3c00,
+0 0 10px #ff3c00,
+0 0 15px #ff6a00,
+0 0 20px #ff6a00;
+}
+
+25%{
+box-shadow:
+0 0 10px #ff6a00,
+0 0 20px #ff6a00,
+0 0 30px #ffae00,
+0 0 40px #ffae00;
+}
+
+50%{
+box-shadow:
+0 0 15px #ff3c00,
+0 0 30px #ff6a00,
+0 0 45px #ffae00,
+0 0 60px #ff6a00;
+}
+
+75%{
+box-shadow:
+0 0 10px #ff6a00,
+0 0 20px #ffae00,
+0 0 35px #ff6a00,
+0 0 50px #ff3c00;
+}
+
+100%{
+box-shadow:
+0 0 5px #ff3c00,
+0 0 15px #ff6a00,
+0 0 25px #ffae00,
+0 0 35px #ff6a00;
+}
+
 }
 
 @media (max-width:768px){
