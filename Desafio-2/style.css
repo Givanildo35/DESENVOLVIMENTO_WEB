@@ -24,7 +24,6 @@ hsl(0,100%,98%)
 );
 
 min-height:100vh;
-
 display:flex;
 align-items:center;
 justify-content:center;
@@ -35,7 +34,6 @@ justify-content:center;
 
 max-width:1440px;
 width:100%;
-
 display:grid;
 grid-template-columns:1fr 1fr;
 
@@ -44,7 +42,6 @@ grid-template-columns:1fr 1fr;
 .content{
 
 padding:80px 120px;
-
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -181,6 +178,8 @@ grid-template-columns:1fr;
 .logo{
     margin-bottom: 30px;
     align-items: center;
+    
+
 }
 
 .hero{
@@ -192,9 +191,9 @@ width:20px;
 
 .content{
 
-
 text-align:center;
 align-items: center;
+order: 0;
 
 }
 
@@ -204,6 +203,7 @@ margin-left:auto;
 margin-right:auto;
 
 }
+
 form{
     width: 100%;
     max-width: 350px;
