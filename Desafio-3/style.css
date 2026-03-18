@@ -1,3 +1,7 @@
+@font-face{
+font-family:"Poppins";
+src:url"assets/fonts/Poppins-ExtraBold.ttf"
+}
 :root{
 
 --purple:hsl(259,100%,65%);
@@ -62,7 +66,8 @@ font-weight:700;
 
 input{
 
-width:140px;
+width:100%;
+max-width: 140px;
 padding:12px;
 font-size:32px;
 font-weight:700;
@@ -146,6 +151,11 @@ font-style:italic;
 color:var(--purple);
 
 }
+.erro-border{
+
+border:1px solid var(--red);
+
+}
 
 @media(max-width:600px){
 
@@ -167,7 +177,7 @@ input{
 
 width:90px;
 font-size:24px;
-box-sizing: px;
+box-sizing: border-box;
 
 }
 .result{

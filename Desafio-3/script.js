@@ -16,27 +16,29 @@ function calculateAge(){
     month.classList.remove("error-border")
     year.classList.remove("error-border")
 
-    let d = day.value
-    let m = month.value
-    let y = year.value
+    let d = parseInt(day.value)
+    let m = parseInt(month.value)
+    let y = parseInt(year.value)
 
     let valid = true
 
     // Validações obrigatórias
-    if(!d){
-        dayError.textContent = "This field is required"
+    if(day.value === "" ||d< 1 || d > 31){
+        dayError.textContent = "Digite um dia válido!"
         day.classList.add("error-border")
         valid = false
     }
+    
+   
 
-    if(!m){
-        monthError.textContent = "This field is required"
+    if(!m || m < 1 || m > 12){
+        monthError.textContent = "Digite um mês válido!"
         month.classList.add("error-border")
         valid = false
     }
 
-    if(!y){
-        yearError.textContent = "This field is required"
+    if(!y || y <= 0 || y > 2026){
+        yearError.textContent = "Digite um ano válido!"
         year.classList.add("error-border")
         valid = false
     }
@@ -45,17 +47,17 @@ function calculateAge(){
 
     // Validação de mês (CORRIGIDO)
     if(m < 1 || m > 12){
-        monthError.textContent = "Invalid month"
+        monthError.textContent = "mes inválido"
         month.classList.add("error-border")
-        return
+        
     }
 
     // Validação de dias no mês
     let daysInMonth = new Date(y, m, 0).getDate()
     if(d > daysInMonth || d < 1){
-        dayError.textContent = "Invalid day"
+        dayError.textContent = "dia inválido"
         day.classList.add("error-border")
-        return
+       
     }
 
     // Validação de data futura
@@ -63,7 +65,7 @@ function calculateAge(){
     let birthDate = new Date(y, m-1, d)
     
     if(birthDate > today){
-        yearError.textContent = "Must be in the past"
+        yearError.textContent = "Coloque ano de Nascimento"
         year.classList.add("error-border")
         return
     }
@@ -83,8 +85,8 @@ function calculateAge(){
         years--
         months += 12
     }
+document.getElementById("years").textContent = years
+document.getElementById("months").textContent = months
+document.getElementById("days").textContent = days
 
-    animateNumber("years", years)
-    animateNumber("months", months)
-    animateNumber("days", days)
 }
