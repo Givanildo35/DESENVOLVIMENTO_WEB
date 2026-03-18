@@ -18,21 +18,21 @@
         <div class="inputs">
           <div class="input-group">
             <label>DIA</label>
-            <input type="number" id="day" placeholder="DD" />
+            <input type="number" id="day" placeholder="DD" min="1" max="31" />
 
             <small class="error" id="dayError"></small>
           </div>
 
           <div class="input-group">
             <label>MES</label>
-            <input type="number" id="month" placeholder="MM" />
+            <input type="number" id="month" placeholder="MM" min="1" max="12"/>
 
             <small class="error" id="monthError"></small>
           </div>
 
           <div class="input-group">
             <label>ANO</label>
-            <input type="number" id="year" placeholder="YYYY" />
+            <input type="number" id="year" placeholder="YYYY" min="1" max="2026" />
 
             <small class="error" id="yearError"></small>
           </div>

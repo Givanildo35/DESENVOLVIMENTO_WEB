@@ -1,41 +1,90 @@
 function calculateAge(){
+    let day = document.getElementById("day")
+    let month = document.getElementById("month")
+    let year = document.getElementById("year")
 
-let day=document.getElementById("day").value
-let month=document.getElementById("month").value
-let year=document.getElementById("year").value
+    let dayError = document.getElementById("dayError")
+    let monthError = document.getElementById("monthError")
+    let yearError = document.getElementById("yearError")
 
-let today=new Date()
+    // Limpa erros anteriores
+    dayError.textContent = ""
+    monthError.textContent = ""
+    yearError.textContent = ""
 
-let birthDate=new Date(year,month-1,day)
+    day.classList.remove("error-border")
+    month.classList.remove("error-border")
+    year.classList.remove("error-border")
 
-if(!day || !month || !year){
+    let d = day.value
+    let m = month.value
+    let y = year.value
 
-alert("Preencha todos os campos")
+    let valid = true
 
-return
+    // Validações obrigatórias
+    if(!d){
+        dayError.textContent = "This field is required"
+        day.classList.add("error-border")
+        valid = false
+    }
 
-}
+    if(!m){
+        monthError.textContent = "This field is required"
+        month.classList.add("error-border")
+        valid = false
+    }
 
-let years=today.getFullYear()-birthDate.getFullYear()
-let months=today.getMonth()-birthDate.getMonth()
-let days=today.getDate()-birthDate.getDate()
+    if(!y){
+        yearError.textContent = "This field is required"
+        year.classList.add("error-border")
+        valid = false
+    }
 
-if(days<0){
+    if(!valid) return
 
-months--
-days+=30
+    // Validação de mês (CORRIGIDO)
+    if(m < 1 || m > 12){
+        monthError.textContent = "Invalid month"
+        month.classList.add("error-border")
+        return
+    }
 
-}
+    // Validação de dias no mês
+    let daysInMonth = new Date(y, m, 0).getDate()
+    if(d > daysInMonth || d < 1){
+        dayError.textContent = "Invalid day"
+        day.classList.add("error-border")
+        return
+    }
 
-if(months<0){
+    // Validação de data futura
+    let today = new Date()
+    let birthDate = new Date(y, m-1, d)
+    
+    if(birthDate > today){
+        yearError.textContent = "Must be in the past"
+        year.classList.add("error-border")
+        return
+    }
 
-years--
-months+=12
+    // Cálculo da idade
+    let years = today.getFullYear() - birthDate.getFullYear()
+    let months = today.getMonth() - birthDate.getMonth()
+    let days = today.getDate() - birthDate.getDate()
 
-}
+    // Ajusta se não fez aniversário ainda
+    if(days < 0){
+        months--
+        days += new Date(today.getFullYear(), today.getMonth(), 0).getDate()
+    }
 
-document.getElementById("years").innerText=years
-document.getElementById("months").innerText=months
-document.getElementById("days").innerText=days
+    if(months < 0){
+        years--
+        months += 12
+    }
 
+    animateNumber("years", years)
+    animateNumber("months", months)
+    animateNumber("days", days)
 }
